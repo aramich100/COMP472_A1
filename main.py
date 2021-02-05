@@ -7,8 +7,8 @@ import pandas as pd
 # WINTER 2021
 
 # Michael Arabian - 40095854
-# Thomas Le       - xxxxxxxx
-# Andre Saad      - xxxxxxxx
+# Thomas Le       - 40096120
+# Andre Saad      - 40076579
 
 
 # ---------------- Task 0 --------------------- #
@@ -29,6 +29,7 @@ train_docs = all_docs[:split_point]
 train_labels = all_labels[:split_point]
 eval_docs = all_docs[split_point:]
 eval_labels = all_labels[split_point:]
+print(all_labels[1])
 
 
 # ---------------- Task 1 --------------------- #
