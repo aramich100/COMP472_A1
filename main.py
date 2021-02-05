@@ -11,8 +11,6 @@ import pandas as pd
 # Andre Saad      - xxxxxxxx
 
 
-
-
 # ---------------- Task 0 --------------------- #
 def read_documents(doc_file):
     docs = []
@@ -23,7 +21,6 @@ def read_documents(doc_file):
             docs.append(words[3:])
             labels.append(words[1])
     return docs, labels
-
 
 all_docs, all_labels = read_documents('all_sentiment_shuffled.txt')
 
