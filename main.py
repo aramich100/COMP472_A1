@@ -1,6 +1,7 @@
 from __future__ import division
 from codecs import open
 from collections import Counter
+from sklearn import datasets
 from sklearn.datasets import load_files
 from sklearn import preprocessing
 from sklearn.naive_bayes import GaussianNB
@@ -44,26 +45,42 @@ eval_labels = all_labels[split_point:]
 # ---------------- Task 1 --------------------- #
 frequency = Counter()
 
-for doc in all_docs:
-    for word in doc:
-        frequency.update(word)
-print(frequency.values())
+# Distribution for words
+# Takes too long to load and plot
+# for doc in all_docs:
+#     frequency.update(doc)
+
+# Distribution for positive/negative
+for doc in all_labels:
+    frequency[doc] += 1
+
 plt.bar(frequency.keys(), frequency.values())
 plt.title("Distribution Plot")
-plt.xlabel("Word/Letter")
+plt.xlabel("Label")
 plt.ylabel("Frequency")
 plt.show()
-
 # ---------------- Task 2 --------------------- #
 letter = list(frequency.keys())
 letter_array = np.array(letter)
 le = preprocessing.LabelEncoder()
-letter_encoder = le.fit(letter_array)
+letter_encoder = le.fit_transform(letter_array)
 print (letter_encoder)
 values = list(frequency.values())
 values_array = np.array(values)
-
+print(values_array)
 features = zip(letter_array, values_array)
-print(features)
+features_list = list(features)
+print(features_list)
 
 model = GaussianNB()
+newLetterEncoder = letter_encoder.reshape(-1,1)
+#newValuesArrays = values_array.reshape(-1, 1)
+model.fit(newLetterEncoder, values_array)
+predicted = model.predict([[0, 2]])
+print(predicted)
+wine = datasets.load_wine()
+print(wine.feature_names)
+print(wine.target_names)
+wine.data.shape
+print(wine.data[0:5])
+print(wine.target)
