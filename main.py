@@ -41,13 +41,12 @@ frequency = Counter()
 # for doc in all_docs:
 #     frequency.update(doc)
 
-# Distribution for letters
-for doc in all_docs:
-    for word in doc:
-        frequency.update(word)
+# Distribution for positive/negative
+for doc in all_labels:
+    frequency[doc] += 1
 
 plt.bar(frequency.keys(), frequency.values())
 plt.title("Distribution Plot")
-plt.xlabel("Word/Letter")
+plt.xlabel("Label")
 plt.ylabel("Frequency")
 plt.show()
