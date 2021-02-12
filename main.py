@@ -6,10 +6,13 @@
 # Andre Saad      - 40076579
 
 from sklearn.datasets import load_files
+from sklearn import *
+from sklearn.naive_bayes import *
 from collections import Counter
 import matplotlib.pyplot as plt
 import re
 import pandas as pd
+import numpy
 
 
 # ---------------- Task 0 --------------------- #
@@ -21,7 +24,7 @@ def read_documents(docName):
         for line in f:
             split_line = re.findall(r'\w+', line)
             label.append(split_line[1])
-            docs.append(split_line[4:])
+            docs.append(" ".join(split_line[4:]))
     return docs, label
 
 
@@ -41,12 +44,22 @@ frequency = Counter()
 # for doc in all_docs:
 #     frequency.update(doc)
 
-# Distribution for positive/negative
-for doc in all_labels:
-    frequency[doc] += 1
+# # Distribution for positive/negative
+# for doc in all_labels:
+#     frequency[doc] += 1
+#
+# plt.bar(frequency.keys(), frequency.values())
+# plt.title("Distribution Plot")
+# plt.xlabel("Label")
+# plt.ylabel("Frequency")
+# plt.show()
 
-plt.bar(frequency.keys(), frequency.values())
-plt.title("Distribution Plot")
-plt.xlabel("Label")
-plt.ylabel("Frequency")
-plt.show()
+# ---------------- Task 2 --------------------- #
+gnb = GaussianNB()
+reshape_docs = numpy.array(train_docs).reshape(-1,1)
+    #.reshape((len(train_docs)),1)
+gnb.fit(reshape_docs, train_labels)
+
+predicted = gnb.predict(eval_docs)
+accuracy = metrics.accuracy_score(predicted,eval_labels)
+print(accuracy*100)
