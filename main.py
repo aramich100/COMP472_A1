@@ -1,4 +1,6 @@
 from __future__ import division
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
 from codecs import open
 from collections import Counter
 from sklearn import datasets
@@ -64,18 +66,39 @@ letter = list(frequency.keys())
 letter_array = np.array(letter)
 le = preprocessing.LabelEncoder()
 letter_encoder = le.fit_transform(letter_array)
-print (letter_encoder)
+#print (letter_encoder)
 values = list(frequency.values())
 values_array = np.array(values)
+#print(values_array)
+values_array2 = le.fit_transform(values_array)
+print(letter_encoder)
 print(values_array)
 features = zip(letter_array, values_array)
 features_list = list(features)
-print(features_list)
+
+X, y = load_iris(return_X_y=True)
+print(X)
+print(y)
+
+newValuesArrays = letter_encoder.reshape(-1, 1)
+newValuesArrays[0] =1
+newValuesArrays[1] =2
+print(newValuesArrays)
+#newLetterEncoder = letter_encoder.reshape(-1, 1)
+#print(newLetterEncoder)
+#print(newValuesArrays)
+#print(letter_encoder)
+X_train, X_test, y_train, y_test = train_test_split(newValuesArrays, values_array, test_size=0.5, random_state=0)
+#print(X_train)
+
+
 
 model = GaussianNB()
-newLetterEncoder = letter_encoder.reshape(-1,1)
-#newValuesArrays = values_array.reshape(-1, 1)
-model.fit(newLetterEncoder, values_array)
+y_pred = model.fit(X_train, y_train).predict(X_test)
+print("Number of mislabeled points out of a total %d points : %d" % (X_test.shape[0], (y_test != y_pred).sum()))
+
+
+#model.fit(newLetterEncoder, values_array)
 predicted = model.predict([[0, 2]])
 print(predicted)
 wine = datasets.load_wine()
