@@ -7,6 +7,8 @@
 
 from sklearn.datasets import load_files
 from sklearn import *
+from sklearn.feature_extraction.text import *
+from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import *
 from collections import Counter
 import matplotlib.pyplot as plt
@@ -55,11 +57,12 @@ frequency = Counter()
 # plt.show()
 
 # ---------------- Task 2 --------------------- #
-gnb = GaussianNB()
-reshape_docs = numpy.array(train_docs).reshape(-1,1)
-    #.reshape((len(train_docs)),1)
-gnb.fit(reshape_docs, train_labels)
+gnb = MultinomialNB()
+cv = CountVectorizer(strip_accents='ascii', token_pattern=u'(?ui)\\b\\w*[a-z]+\\w*\\b',ngram_range = (-1,1), stop_words='english')
+train_docs_Vec = cv.fit_transform(train_docs)
+gnb.fit(train_docs_Vec, train_labels)
 
-predicted = gnb.predict(eval_docs)
+eval_docs_Vec = cv.transform(eval_docs)
+predicted = gnb.predict(eval_docs_Vec)
 accuracy = metrics.accuracy_score(predicted,eval_labels)
 print(accuracy*100)
