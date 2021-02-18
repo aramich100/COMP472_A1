@@ -57,12 +57,48 @@ frequency = Counter()
 # plt.show()
 
 # ---------------- Task 2 --------------------- #
+
+# Naives Bayes
 gnb = MultinomialNB()
 cv = CountVectorizer(strip_accents='ascii', token_pattern=u'(?ui)\\b\\w*[a-z]+\\w*\\b',ngram_range = (-1,1), stop_words='english')
 train_docs_Vec = cv.fit_transform(train_docs)
 gnb.fit(train_docs_Vec, train_labels)
 
+
 eval_docs_Vec = cv.transform(eval_docs)
 predicted = gnb.predict(eval_docs_Vec)
 accuracy = metrics.accuracy_score(predicted,eval_labels)
-print(accuracy*100)
+print("NB: ",accuracy*100)
+
+f = open("NaiveBayes_all_sentiment_shuffled.txt", "w")
+outputFile1 = "Accuracy : " + str(accuracy*100)
+f.write(outputFile1)
+f.close()
+
+
+
+# Base DT
+from sklearn import tree
+
+clf = tree.DecisionTreeClassifier(criterion ='entropy')
+clf.fit(train_docs_Vec, train_labels)
+y_pred = clf.predict(eval_docs_Vec)
+acc= metrics.accuracy_score(y_pred,eval_labels)
+print("DT: ", acc*100)
+
+f2 = open("Base_DT_all_sentiment_shuffled.txt", "w")
+outputFile2 = "Accuracy : " + str(acc*100)
+f2.write(outputFile2)
+f2.close()
+
+# Better DT
+clfb = tree.DecisionTreeClassifier(criterion ='gini', splitter = 'random')
+clfb.fit(train_docs_Vec, train_labels)
+y_predb = clfb.predict(eval_docs_Vec)
+accb= metrics.accuracy_score(y_predb,eval_labels)
+print("Better DT : ",accb*100)
+
+f3 = open("Best_DT_all_sentiment_shuffled.txt", "w")
+outputFile3= "Accuracy : " + str(accb*100)
+f3.write(outputFile3)
+f3.close()
