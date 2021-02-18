@@ -57,12 +57,21 @@ frequency = Counter()
 # plt.show()
 
 # ---------------- Task 2 --------------------- #
+
+# Naives Bayes
 gnb = MultinomialNB()
-cv = CountVectorizer(strip_accents='ascii', token_pattern=u'(?ui)\\b\\w*[a-z]+\\w*\\b',ngram_range = (-1,1), stop_words='english')
+cv = CountVectorizer(strip_accents='ascii', token_pattern=u'(?ui)\\b\\w*[a-z]+\\w*\\b',ngram_range = (1,1), stop_words='english')
 train_docs_Vec = cv.fit_transform(train_docs)
 gnb.fit(train_docs_Vec, train_labels)
 
 eval_docs_Vec = cv.transform(eval_docs)
-predicted = gnb.predict(eval_docs_Vec)
-accuracy = metrics.accuracy_score(predicted,eval_labels)
-print(accuracy*100)
+predictedGnb = gnb.predict(eval_docs_Vec)
+
+accuracyGnb = metrics.accuracy_score(predictedGnb, eval_labels)
+print('Naives Bayes Accuracy: ' + str(accuracyGnb*100))
+
+decisionTree = tree.DecisionTreeClassifier(criterion= 'entropy')
+decisionTree.fit(train_docs_Vec, train_labels)
+predictedDt = decisionTree.predict(eval_docs_Vec)
+accuracyDt = metrics.accuracy_score(predictedDt, eval_labels)
+print('Decision Tree Accuracy: ' + str(accuracyDt*100))
