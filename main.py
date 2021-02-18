@@ -67,11 +67,59 @@ gnb.fit(train_docs_Vec, train_labels)
 eval_docs_Vec = cv.transform(eval_docs)
 predictedGnb = gnb.predict(eval_docs_Vec)
 
+# part 3a)
+row = len(train_docs) + 1
+f = open("NaiveBayes-all_sentiment_shuffled.txt", "w")
+for result in predictedGnb:
+    index = 1
+    if result == "neg":
+        index = 0
+    f.write(str(row) + ", " + str(index) + "\n")
+    row += 1
+
+# part 3c) d)
+precisionGnb = metrics.precision_score(predictedGnb, eval_labels, average = None)
+recallGnb = metrics.recall_score(predictedGnb, eval_labels, average = None)
+f1ScoreGnb = metrics.f1_score(predictedGnb, eval_labels, average = None)
 accuracyGnb = metrics.accuracy_score(predictedGnb, eval_labels)
+print('Naives Bayes Precision: ' + str(precisionGnb))
+print('Naives Bayes Recall: ' + str(recallGnb))
+print('Naives Bayes f1_score: ' + str(f1ScoreGnb))
 print('Naives Bayes Accuracy: ' + str(accuracyGnb*100))
+f.write('Naives Bayes Precision: ' + str(precisionGnb) +
+        '\nNaives Bayes Recall: ' + str(recallGnb) +
+        '\nNaives Bayes f1_score: ' + str(f1ScoreGnb) +
+        '\nNaives Bayes Accuracy: ' + str(accuracyGnb*100))
+f.close()
+
+# Decision tree -------------------------- #
 
 decisionTree = tree.DecisionTreeClassifier(criterion= 'entropy')
 decisionTree.fit(train_docs_Vec, train_labels)
 predictedDt = decisionTree.predict(eval_docs_Vec)
+
+# part 3a)
+row = len(train_docs) + 1
+f = open("DecisionTree-all_sentiment_shuffled.txt", "w")
+for result in predictedDt:
+    index = 1
+    if result == "neg":
+        index = 0
+    f.write(str(row) + ", " + str(index) + "\n")
+    row += 1
+
+# part 3c) d)
+precisionDt = metrics.precision_score(predictedGnb, eval_labels, average = None)
+recallDt = metrics.recall_score(predictedDt, eval_labels, average = None)
+f1ScoreDt = metrics.f1_score(predictedDt, eval_labels, average = None)
 accuracyDt = metrics.accuracy_score(predictedDt, eval_labels)
+print('Decision Tree Precision: ' + str(precisionDt))
+print('Decision Tree Recall: ' + str(recallDt))
+print('Decision Tree f1_score: ' + str(f1ScoreDt))
 print('Decision Tree Accuracy: ' + str(accuracyDt*100))
+
+f.write('Decision Tree Precision: ' + str(precisionDt) +
+        '\nDecision Tree Recall: ' + str(recallDt) +
+        '\nDecision Tree f1_score: ' + str(f1ScoreDt) +
+        '\nDecision Tree Accuracy: ' + str(accuracyDt*100))
+f.close()
