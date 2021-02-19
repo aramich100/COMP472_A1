@@ -5,9 +5,9 @@
 # Thomas Le       - 40096120
 # Andre Saad      - 40076579
 
+from sklearn.feature_extraction.text import *
 from sklearn.datasets import load_files
 from sklearn import *
-from sklearn.feature_extraction.text import *
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import *
 from collections import Counter
@@ -123,3 +123,35 @@ f.write('Decision Tree Precision: ' + str(precisionDt) +
         '\nDecision Tree f1_score: ' + str(f1ScoreDt) +
         '\nDecision Tree Accuracy: ' + str(accuracyDt*100))
 f.close()
+
+# ---------------- Task 4 --------------------- #
+
+index = 0
+listOfString = []
+realLabel = []
+predictedLabel = []
+
+while index < len(predictedGnb):
+    if predictedGnb[index] != eval_labels[index]:
+        listOfString.append(eval_docs[index])
+        realLabel.append(eval_labels[index])
+        predictedLabel.append(predictedGnb[index])
+        index += 1
+        if len(listOfString) > 10:
+            break
+    else:
+        index += 1
+
+i = 0
+f = open("misclassified.txt", 'w')
+while i < len(listOfString):
+    print(listOfString[i])
+    print("Real Value: " + realLabel[i])
+    print("Predicted Value: " + predictedLabel[i] + "\n")
+    f.write(listOfString[i] + "\n")
+    f.write(("Real Value: " + realLabel[i]) + "\n")
+    f.write(("Predicted Value: " + predictedLabel[i] + "\n\n"))
+    i += 1
+
+f.close()
+
