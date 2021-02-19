@@ -43,18 +43,16 @@ frequency = Counter()
 
 # Distribution for words
 # Takes too long to load and plot
-# for doc in all_docs:
-#     frequency.update(doc)
 
-# # Distribution for positive/negative
-# for doc in all_labels:
-#     frequency[doc] += 1
-#
-# plt.bar(frequency.keys(), frequency.values())
-# plt.title("Distribution Plot")
-# plt.xlabel("Label")
-# plt.ylabel("Frequency")
-# plt.show()
+# Distribution for positive/negative
+for doc in all_labels:
+    frequency[doc] += 1
+
+plt.bar(frequency.keys(), frequency.values())
+plt.title("Distribution Plot")
+plt.xlabel("Label")
+plt.ylabel("Frequency")
+plt.show()
 
 # ---------------- Task 2 --------------------- #
 
@@ -171,32 +169,32 @@ f.close()
 
 # ---------------- Task 4 --------------------- #
 
-index = 0
-listOfString = []
-realLabel = []
-predictedLabel = []
-
-while index < len(predictedGnb):
-    if predictedGnb[index] != eval_labels[index]:
-        listOfString.append(eval_docs[index])
-        realLabel.append(eval_labels[index])
-        predictedLabel.append(predictedGnb[index])
-        index += 1
-        if len(listOfString) > 10:
-            break
-    else:
-        index += 1
-
-i = 0
-f = open("misclassified.txt", 'w')
-while i < len(listOfString):
-    print(listOfString[i])
-    print("Real Value: " + realLabel[i])
-    print("Predicted Value: " + predictedLabel[i] + "\n")
-    f.write(listOfString[i] + "\n")
-    f.write(("Real Value: " + realLabel[i]) + "\n")
-    f.write(("Predicted Value: " + predictedLabel[i] + "\n\n"))
-    i += 1
-
-f.close()
+# index = 0
+# listOfString = []
+# realLabel = []
+# predictedLabel = []
+#
+# while index < len(predictedGnb):
+#     if predictedGnb[index] != eval_labels[index]:
+#         listOfString.append(eval_docs[index])
+#         realLabel.append(eval_labels[index])
+#         predictedLabel.append(predictedGnb[index])
+#         index += 1
+#         if len(listOfString) > 10:
+#             break
+#     else:
+#         index += 1
+#
+# i = 0
+# f = open("misclassified.txt", 'w')
+# while i < len(listOfString):
+#     print(listOfString[i])
+#     print("Real Value: " + realLabel[i])
+#     print("Predicted Value: " + predictedLabel[i] + "\n")
+#     f.write(listOfString[i] + "\n")
+#     f.write(("Real Value: " + realLabel[i]) + "\n")
+#     f.write(("Predicted Value: " + predictedLabel[i] + "\n\n"))
+#     i += 1
+#
+# f.close()
 
