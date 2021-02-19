@@ -114,7 +114,7 @@ for result in predictedDt:
     row += 1
 
 # part 3c) d)
-precisionDt = metrics.precision_score(predictedGnb, eval_labels, average = None)
+precisionDt = metrics.precision_score(predictedDt, eval_labels, average = None)
 recallDt = metrics.recall_score(predictedDt, eval_labels, average = None)
 f1ScoreDt = metrics.f1_score(predictedDt, eval_labels, average = None)
 accuracyDt = metrics.accuracy_score(predictedDt, eval_labels)
@@ -131,7 +131,42 @@ f.write('Decision Tree Precision: ' + str(precisionDt) +
 cmDt = numpy.array2string(metrics.confusion_matrix(eval_labels, predictedDt))
 print(cmDt)
 f.write('\n Confusion Matrix: \n' + cmDt )
+f.close()
 
+# Better Decision tree -------------------------- #
+
+betterDecisionTree = tree.DecisionTreeClassifier(splitter= 'random')
+betterDecisionTree.fit(train_docs_Vec, train_labels)
+predictedBdt = betterDecisionTree.predict(eval_docs_Vec)
+
+# part 3a)
+row2 = len(train_docs) + 1
+f = open("BetterDecisionTree-all_sentiment_shuffled.txt", "w")
+for result in predictedBdt:
+    index2 = 1
+    if result == "neg":
+        index2 = 0
+    f.write(str(row) + ", " + str(index2) + "\n")
+    row2 += 1
+
+# part 3c) d)
+predictedBdt = metrics.precision_score(predictedBdt, eval_labels, average = None)
+recallBdt = metrics.recall_score(predictedBdt, eval_labels, average = None)
+f1ScoreBdt = metrics.f1_score(predictedBdt, eval_labels, average = None)
+accuracyBdt = metrics.accuracy_score(predictedBdt, eval_labels)
+print('Better Decision Tree Precision: ' + str(predictedBdt))
+print('Better Decision Tree Recall: ' + str(recallBdt))
+print('Better Decision Tree f1_score: ' + str(f1ScoreBdt))
+print('Better Decision Tree Accuracy: ' + str(accuracyBdt*100))
+
+f.write('Better Decision Tree Precision: ' + str(predictedBdt) +
+        '\nBetter Decision Tree Recall: ' + str(recallBdt) +
+        '\nBetter Decision Tree f1_score: ' + str(f1ScoreBdt) +
+        '\nBetter Decision Tree Accuracy: ' + str(accuracyBdt*100))
+
+cmBdt = numpy.array2string(metrics.confusion_matrix(eval_labels, predictedBdt))
+print(cmBdt)
+f.write('\n Confusion Matrix: \n' + cmBdt)
 f.close()
 
 # ---------------- Task 4 --------------------- #
