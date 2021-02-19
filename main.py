@@ -90,6 +90,11 @@ f.write('Naives Bayes Precision: ' + str(precisionGnb) +
         '\nNaives Bayes Recall: ' + str(recallGnb) +
         '\nNaives Bayes f1_score: ' + str(f1ScoreGnb) +
         '\nNaives Bayes Accuracy: ' + str(accuracyGnb*100))
+
+cmGnb = numpy.array2string(metrics.confusion_matrix(eval_labels, predictedGnb))
+print(cmGnb)
+f.write('\n Confusion Matrix: \n' + cmGnb )
+
 f.close()
 
 # Decision tree -------------------------- #
@@ -122,6 +127,11 @@ f.write('Decision Tree Precision: ' + str(precisionDt) +
         '\nDecision Tree Recall: ' + str(recallDt) +
         '\nDecision Tree f1_score: ' + str(f1ScoreDt) +
         '\nDecision Tree Accuracy: ' + str(accuracyDt*100))
+
+cmDt = numpy.array2string(metrics.confusion_matrix(eval_labels, predictedDt))
+print(cmDt)
+f.write('\n Confusion Matrix: \n' + cmDt )
+
 f.close()
 
 # ---------------- Task 4 --------------------- #

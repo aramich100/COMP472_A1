@@ -2385,3 +2385,6 @@ Naives Bayes Precision: [0.81788618 0.79444926]
 Naives Bayes Recall: [0.80933226 0.80350877]
 Naives Bayes f1_score: [0.81358674 0.79895334]
 Naives Bayes Accuracy: 80.65463701216954
+ Confusion Matrix: 
+[[1006  224]
+ [ 237  916]]
