@@ -150,16 +150,16 @@ for result in predictedBdt:
     row2 += 1
 
 # part 3c) d)
-predictedBdt = metrics.precision_score(eval_labels, predictedBdt, average=None)
+precisionBdt = metrics.precision_score(eval_labels, predictedBdt, average=None)
 recallBdt = metrics.recall_score(eval_labels, predictedBdt, average=None)
 f1ScoreBdt = metrics.f1_score(eval_labels, predictedBdt, average=None)
 accuracyBdt = metrics.accuracy_score(eval_labels, predictedBdt)
-print('Better Decision Tree Precision: ' + str(predictedBdt))
+print('Better Decision Tree Precision: ' + str(precisionBdt))
 print('Better Decision Tree Recall: ' + str(recallBdt))
 print('Better Decision Tree f1_score: ' + str(f1ScoreBdt))
 print('Better Decision Tree Accuracy: ' + str(accuracyBdt*100))
 
-f.write('Better Decision Tree Precision: ' + str(predictedBdt) +
+f.write('Better Decision Tree Precision: ' + str(precisionBdt) +
         '\nBetter Decision Tree Recall: ' + str(recallBdt) +
         '\nBetter Decision Tree f1_score: ' + str(f1ScoreBdt) +
         '\nBetter Decision Tree Accuracy: ' + str(accuracyBdt*100))
