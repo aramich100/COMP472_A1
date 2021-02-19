@@ -78,10 +78,10 @@ for result in predictedGnb:
     row += 1
 
 # part 3c) d)
-precisionGnb = metrics.precision_score(predictedGnb, eval_labels, average = None)
-recallGnb = metrics.recall_score(predictedGnb, eval_labels, average = None)
-f1ScoreGnb = metrics.f1_score(predictedGnb, eval_labels, average = None)
-accuracyGnb = metrics.accuracy_score(predictedGnb, eval_labels)
+precisionGnb = metrics.precision_score(eval_labels, predictedGnb, average = None)
+recallGnb = metrics.recall_score(eval_labels, predictedGnb, average = None)
+f1ScoreGnb = metrics.f1_score(eval_labels, predictedGnb, average=None)
+accuracyGnb = metrics.accuracy_score(eval_labels, predictedGnb)
 print('Naives Bayes Precision: ' + str(precisionGnb))
 print('Naives Bayes Recall: ' + str(recallGnb))
 print('Naives Bayes f1_score: ' + str(f1ScoreGnb))
@@ -114,9 +114,9 @@ for result in predictedDt:
     row += 1
 
 # part 3c) d)
-precisionDt = metrics.precision_score(predictedDt, eval_labels, average = None)
-recallDt = metrics.recall_score(predictedDt, eval_labels, average = None)
-f1ScoreDt = metrics.f1_score(predictedDt, eval_labels, average = None)
+precisionDt = metrics.precision_score(eval_labels, predictedDt, average=None)
+recallDt = metrics.recall_score(eval_labels, predictedDt, average=None)
+f1ScoreDt = metrics.f1_score(eval_labels, predictedDt, average=None)
 accuracyDt = metrics.accuracy_score(predictedDt, eval_labels)
 print('Decision Tree Precision: ' + str(precisionDt))
 print('Decision Tree Recall: ' + str(recallDt))
@@ -150,10 +150,10 @@ for result in predictedBdt:
     row2 += 1
 
 # part 3c) d)
-predictedBdt = metrics.precision_score(predictedBdt, eval_labels, average = None)
-recallBdt = metrics.recall_score(predictedBdt, eval_labels, average = None)
-f1ScoreBdt = metrics.f1_score(predictedBdt, eval_labels, average = None)
-accuracyBdt = metrics.accuracy_score(predictedBdt, eval_labels)
+predictedBdt = metrics.precision_score(eval_labels, predictedBdt, average=None)
+recallBdt = metrics.recall_score(eval_labels, predictedBdt, average=None)
+f1ScoreBdt = metrics.f1_score(eval_labels, predictedBdt, average=None)
+accuracyBdt = metrics.accuracy_score(eval_labels, predictedBdt)
 print('Better Decision Tree Precision: ' + str(predictedBdt))
 print('Better Decision Tree Recall: ' + str(recallBdt))
 print('Better Decision Tree f1_score: ' + str(f1ScoreBdt))
