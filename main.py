@@ -17,6 +17,8 @@ from sklearn.naive_bayes import *
 from collections import Counter
 from sklearn.metrics import plot_confusion_matrix
 import matplotlib.pyplot as plt
+import  matplotlib.pyplot as plt1
+import matplotlib.pyplot as plt2
 import re
 import pandas as pd
 import numpy
@@ -76,8 +78,9 @@ predicted = gnb.predict(eval_docs_Vec)
 accuracy = metrics.accuracy_score(predicted, eval_labels)
 print("NB: ", accuracy*100)
 plot_confusion_matrix(gnb, train_docs_Vec, train_labels)
-confusion_matrix(gnb, train_docs_Vec, train_labels)
 plt.show()
+#confusion_matrix(gnb, train_docs_Vec, train_labels)
+
 f = open("NaiveBayes_all_sentiment_shuffled.txt", "w")
 outputFile1 = "Accuracy : " + str(accuracy*100)
 f.write(outputFile1)
@@ -93,7 +96,7 @@ y_pred = clf.predict(eval_docs_Vec)
 acc = metrics.accuracy_score(y_pred, eval_labels)
 print("DT: ", acc*100)
 plot_confusion_matrix(clf, train_docs_Vec, train_labels)
-plt.show()
+plt1.show()
 plt.savefig("Base_DT_all_sentiment_shuffled.pdf")
 
 f2 = open("Base_DT_all_sentiment_shuffled.pdf", "w")
@@ -108,7 +111,7 @@ y_predb = clfb.predict(eval_docs_Vec)
 accb = metrics.accuracy_score(y_predb, eval_labels)
 print("Better DT : ", accb*100)
 plot_confusion_matrix(clfb, train_docs_Vec, train_labels)
-plt.show()
+plt2.show()
 plt.savefig("Best_DT_all_sentiment_shuffled.pdf")
 
 f3 = open("Best_DT_all_sentiment_shuffled.pdf", "w")
