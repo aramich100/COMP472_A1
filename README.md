@@ -9,7 +9,7 @@
 
 # Instructions
 
-  For this assignment, we used Python along with the scikit-learn machine learning framework to experiment with two different machine learning algorithms. We used a provided sentiment data set. The focus of this assignment was to gain experience on experimentations and analysis. See http://scikit-learn.org/stable/ for official documentation.
+  For this assignment, we used Python along with the Scikit-learn machine learning framework to experiment with two different machine learning algorithms. We used a provided sentiment data set. The focus of this assignment was to gain experience on experimentations and analysis. See http://scikit-learn.org/stable/ for official documentation.
   
   
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/1200px-Scikit_learn_logo_small.svg.png" width="400" height="200">
@@ -17,7 +17,7 @@
   
  # Our Results 
  
-As instructed, usin the SciKit Framework, we were able to run 3 different Machine Learning Algorithms and obtained very promising results.
+As instructed, using the SciKit Framework, we were able to run 3 different Machine Learning Algorithms and obtained very promising results.
  
 Naive Bayes Accuracy: 80.65463701216954
 Confusion Matrix: [ [1006  224][ 237  916]]
