@@ -32,4 +32,4 @@ As instructed, using the SciKit Framework, we were able to run 3 different Machi
 - Confusion Matrix: [ [ 868 362 ] [ 318 835 ]]
 
 
-We can see that the Naive Bayes algorithm held the highest accuracy while compared to the Decision Tree. This is due to the fact that the Decision Tree is a discriminative model, whereas the Niave Bayes is a generative model. Given out data set, the Naive Bayes is best suited for the hisghest accuracy. 
+We can see that the Naive Bayes algorithm held the highest accuracy while compared to the Decision Tree. This is due to the fact that the Decision Tree is a discriminative model, whereas the Naive Bayes is a generative model. Given our data set, the Naive Bayes is best suited for the highest accuracy. 
