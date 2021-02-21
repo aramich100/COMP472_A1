@@ -11,7 +11,8 @@
 
   For this assignment, we used Python along with the scikit-learn machine learning framework to experiment with two different machine learning algorithms. We used a provided sentiment data set. The focus of this assignment was to gain experience on experimentations and analysis. See http://scikit-learn.org/stable/ for official documentation.
   
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/1200px-Scikit_learn_logo_small.svg.png" width="300" height="200">
+  
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/1200px-Scikit_learn_logo_small.svg.png" width="400" height="200">
   
   
  # Our Results 
