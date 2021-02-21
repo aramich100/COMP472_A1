@@ -19,13 +19,16 @@
  
 As instructed, using the SciKit Framework, we were able to run 3 different Machine Learning Algorithms and obtained very promising results.
  
-Naive Bayes Accuracy: 80.65463701216954
+### Naive Bayes 
+Accuracy: 80.65463701216954
 Confusion Matrix: [ [1006  224][ 237  916]]
  
-Decision Tree Accuracy: 72.2198908938313
+### Decision Tree 
+Accuracy: 72.2198908938313
 Confusion Matrix: [ [870 360] [302 851]]
 
-Better Decision Tree Accuracy: 73.46454049517415
+### Better Decision Tree 
+Accuracy: 73.46454049517415
 Confusion Matrix: [ [868 362] [318 835]]
 
 
