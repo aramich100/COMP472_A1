@@ -17,7 +17,7 @@
   
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/1200px-Scikit_learn_logo_small.svg.png" width="400" height="200">
   
-  
+   
  # Our Results 
  
 As instructed, using the SciKit Framework, we were able to run 3 different Machine Learning Algorithms and obtained very promising results.
