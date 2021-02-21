@@ -2,9 +2,9 @@
 # COMP 472 - Assignment 1 (Winter 2021)
 
 # Team Members
-Michael Arabian
-Thomas Le
-Andre Saad
+- Michael Arabian
+- Thomas Le
+- Andre Saad
 
 
 # Instructions
