@@ -21,7 +21,14 @@
    
   # How to run our program
   
-  1- 
+  1 - Download our GitHub repository as a Zip or use 'Git Clone' to have a copy on your computer.
+  2 - Make sure to have Python 3.9.2 installed on your computer. If you do not have it, you can install it here : https://www.python.org/downloads/
+  3 - Run the following command in your terminal in order to install scikit-learn : 
+  ```
+pip install scikit-learn
+
+```
+
  <br />  <br />
  # Our Results 
  
