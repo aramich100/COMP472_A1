@@ -32,6 +32,11 @@ git clone https://github.com/aramich100/COMP472_A1
 pip install scikit-learn
 
 ```
+- To run in our script, type the following command in the terminal. Make sure you are in the proper directory.
+```
+py main.py
+
+```
 
  <br />  <br />
  # Our Results 
