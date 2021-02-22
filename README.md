@@ -27,17 +27,17 @@ git clone https://github.com/aramich100/COMP472_A1
 
 ```
 - Make sure to have Python 3.9.2 installed on your computer. If you do not have it, you can install it here : https://www.python.org/downloads/  <br />
-- Run the following command in your terminal in order to install scikit-learn : 
+- Run the following command in your terminal in order to install scikit-learn and all necessairy libraries within the main.pu: 
 ```
 pip install scikit-learn
 
 ```
-- To run our script, type the following command into the terminal. Make sure you are in the proper directory.
+- To run the script, type the following command into the terminal. Make sure you are in the proper directory.
 ```
 py main.py
 
 ```
-
+- The program will now run the tasks in sequential order. Task 2 will display a plot and will pause the program. Once the plot from task 2 is closed, the remaining tasks will continue.
 
  <br />  <br />
  # Our Results 
