@@ -10,7 +10,7 @@
 - Andre Saad
 
 
-# Instructions
+# Introduction
 
   For this assignment, we used Python along with the Scikit-learn machine learning framework to experiment with two different machine learning algorithms. We used a provided sentiment data set. The focus of this assignment was to gain experience on experimentations and analysis. See http://scikit-learn.org/stable/ for official documentation.
   
@@ -19,7 +19,7 @@
   
    <br /> <br />
    
-  # How to run our program
+  # Instructions
   
 - Download our GitHub repository as a Zip or use 'Git Clone' to have a copy on your computer.
 ```
