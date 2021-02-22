@@ -21,12 +21,13 @@
    
   # Instructions
   
-- Download our GitHub repository as a Zip or use 'Git Clone' to have a copy on your computer.
+- Download our GitHub repository as a Zip or use 'Git Clone' to have a copy on your computer. <br />
 ```
 git clone https://github.com/aramich100/COMP472_A1
 
 ```
-- Make sure to have Python 3.9.2 installed on your computer. If you do not have it, you can install it here : https://www.python.org/downloads/
+<br />
+- Make sure to have Python 3.9.2 installed on your computer. If you do not have it, you can install it here : https://www.python.org/downloads/ <br />
 - Run the following command in your terminal in order to install scikit-learn : 
 ```
 pip install scikit-learn
@@ -37,7 +38,7 @@ pip install scikit-learn
 py main.py
 
 ```
-- In the
+
 
  <br />  <br />
  # Our Results 
