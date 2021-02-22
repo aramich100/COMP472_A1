@@ -17,6 +17,11 @@
   <br /> <br />
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/1200px-Scikit_learn_logo_small.svg.png" width="400" height="200">  
   
+   <br /> <br />
+   
+  # How to run our program
+  
+  1- 
  <br />  <br />
  # Our Results 
  
