@@ -26,7 +26,7 @@
 git clone https://github.com/aramich100/COMP472_A1
 
 ```
-- Make sure to have Python 3.9.2 installed on your computer. If you do not have it, you can install it here : https://www.python.org/downloads/ 
+- Make sure to have Python 3.9.2 installed on your computer. If you do not have it, you can install it here : https://www.python.org/downloads/  <br />
 - Run the following command in your terminal in order to install scikit-learn : 
 ```
 pip install scikit-learn
